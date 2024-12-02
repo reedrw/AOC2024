@@ -2,8 +2,8 @@
 
 from lists_sorted import list1, list2
 
-diff = 0
+diff: int = 0
 for i in range(len(list1)):
-    diff = diff + abs(list1[i] - list2[i])
+    diff += abs(list1[i] - list2[i])
 
 print(diff)

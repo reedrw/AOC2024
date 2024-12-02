@@ -2,7 +2,7 @@
 
 from lists_sorted import list1, list2
 
-data = {}
+data: dict[int, int] = {}
 
 for i in range(len(list1)):
     data[list1[i]] = 0
@@ -11,9 +11,9 @@ for i in range(len(list2)):
     if list2[i] in data:
         data[list2[i]] += 1
 
-data = dict((k,v) for k,v in data.items() if v > 0)
+data: dict[int, int] = dict((k,v) for k,v in data.items() if v > 0)
 
-similarity_score = 0
+similarity_score: int = 0
 for k,v in data.items():
     similarity_score += k * v
 

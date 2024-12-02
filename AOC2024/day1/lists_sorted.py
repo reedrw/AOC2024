@@ -1,20 +1,24 @@
-def gnomeSort(arr):
-    pos = 0
-    hold = 0
-    while (pos < len(arr)):
-        if (pos == 0 or arr[pos] >= arr[pos - 1]):
+from io import TextIOWrapper
+
+def gnome_sort(arr: list[int]) -> list[int]:
+    sorted: list[int] = arr.copy()
+    pos: int = 0
+    hold: int = 0
+    while (pos < len(sorted)):
+        if (pos == 0 or sorted[pos] >= sorted[pos - 1]):
             pos = pos + 1
         else:
-            hold = arr[pos]
-            arr[pos] = arr[pos - 1]
-            arr[pos - 1] = hold
+            hold = sorted[pos]
+            sorted[pos] = sorted[pos - 1]
+            sorted[pos - 1] = hold
             pos = pos - 1
+    return sorted
 
-f = open("./input.txt", "r")
-nums = f.read().split()
+f: TextIOWrapper = open("./input.txt", "r")
+nums: list[str] = f.read().split()
 
-list1 = []
-list2 = []
+list1: list[int] = []
+list2: list[int] = []
 
 for i in range(len(nums)):
     if (i % 2 == 0):
@@ -22,5 +26,5 @@ for i in range(len(nums)):
     else:
         list2.append(int(nums[i]))
 
-gnomeSort(list1)
-gnomeSort(list2)
+list1 = gnome_sort(list1)
+list2 = gnome_sort(list2)
