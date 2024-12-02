@@ -18,12 +18,9 @@ list2 = []
 
 for i in range(len(nums)):
     if (i % 2 == 0):
-        list1.append(nums[int(i)])
+        list1.append(int(nums[i]))
     else:
-        list2.append(nums[int(i)])
+        list2.append(int(nums[i]))
 
 gnomeSort(list1)
 gnomeSort(list2)
-
-list1 = [int(i) for i in list1]
-list2 = [int(i) for i in list2]
